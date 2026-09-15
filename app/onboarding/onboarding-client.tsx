@@ -228,7 +228,7 @@ export default function OnboardingClient() {
                 </div>
                 <div className="space-y-3">
                   {[
-                    { value: 'beginner', label: 'Beginner', desc: 'I'm new to this topic' },
+                    { value: 'beginner', label: 'Beginner', desc: 'I\u2019m new to this topic' },
                     { value: 'intermediate', label: 'Intermediate', desc: 'I know the basics' },
                     { value: 'good', label: 'Good', desc: 'I can work with this comfortably' },
                     { value: 'advanced', label: 'Advanced', desc: 'I want deep technical content' },

@@ -244,3 +244,30 @@ export interface Notification {
   date: string;
   read: boolean;
 }
+
+export interface CommunityPost {
+  id: string;
+  authorId: string;
+  authorName: string;
+  authorAvatar?: string;
+  authorRole: string;
+  title: string;
+  content: string;
+  topic: string;
+  tags: string[];
+  likes: number;
+  likedByMe: boolean;
+  comments: CommunityComment[];
+  createdAt: string;
+  pinned?: boolean;
+}
+
+export interface CommunityComment {
+  id: string;
+  authorId: string;
+  authorName: string;
+  authorRole: string;
+  content: string;
+  likes: number;
+  createdAt: string;
+}
