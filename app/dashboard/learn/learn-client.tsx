@@ -29,7 +29,7 @@ export default function LearnClient() {
     if (!topic.trim()) return;
     setGenerating(true);
     setTimeout(() => {
-      router.push(`/lesson/custom?topic=${encodeURIComponent(topic)}&level=${level}&lang=${language}&style=${style}&duration=${encodeURIComponent(duration)}`);
+      router.push(`/dashboard/lesson/custom?topic=${encodeURIComponent(topic)}&level=${level}&lang=${language}&style=${style}&duration=${encodeURIComponent(duration)}`);
     }, 1200);
   };
 

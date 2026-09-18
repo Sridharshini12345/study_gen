@@ -24,12 +24,12 @@ export default function DashboardClient() {
   const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
 
   const quickActions = [
-    { icon: Brain, label: 'Learn New Topic', href: '/learn', color: 'bg-indigo-500/10 text-indigo-500' },
-    { icon: Upload, label: 'Upload PDF', href: '/documents', color: 'bg-violet-500/10 text-violet-500' },
-    { icon: MessageSquare, label: 'Ask AI Tutor', href: '/tutor', color: 'bg-cyan-500/10 text-cyan-500' },
-    { icon: ClipboardCheck, label: 'Take Mock Test', href: '/tests', color: 'bg-blue-500/10 text-blue-500' },
-    { icon: RefreshCw, label: 'Review Weak Topics', href: '/revision', color: 'bg-amber-500/10 text-amber-500' },
-    { icon: Layers, label: 'Create Flashcards', href: '/flashcards', color: 'bg-green-500/10 text-green-500' },
+    { icon: Brain, label: 'Learn New Topic', href: '/dashboard/learn', color: 'bg-indigo-500/10 text-indigo-500' },
+    { icon: Upload, label: 'Upload PDF', href: '/dashboard/documents', color: 'bg-violet-500/10 text-violet-500' },
+    { icon: MessageSquare, label: 'Ask AI Tutor', href: '/dashboard/tutor', color: 'bg-cyan-500/10 text-cyan-500' },
+    { icon: ClipboardCheck, label: 'Take Mock Test', href: '/dashboard/tests', color: 'bg-blue-500/10 text-blue-500' },
+    { icon: RefreshCw, label: 'Review Weak Topics', href: '/dashboard/revision', color: 'bg-amber-500/10 text-amber-500' },
+    { icon: Layers, label: 'Create Flashcards', href: '/dashboard/flashcards', color: 'bg-green-500/10 text-green-500' },
   ];
 
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -83,7 +83,7 @@ export default function DashboardClient() {
                   </div>
                 </div>
                 <Button asChild size="sm" className="shrink-0">
-                  <Link href={`/lesson/${currentLesson.id}`}>
+                  <Link href={`/dashboard/lesson/${currentLesson.id}`}>
                     Continue
                     <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                   </Link>
@@ -136,7 +136,7 @@ export default function DashboardClient() {
           <div className="animate-fade-in-up">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-display text-lg font-semibold">Continue Learning</h2>
-              <Link href="/my-learning" className="text-sm text-primary hover:underline">
+              <Link href="/dashboard/my-learning" className="text-sm text-primary hover:underline">
                 View all
               </Link>
             </div>
@@ -260,7 +260,7 @@ export default function DashboardClient() {
                 </div>
               ))}
               <Button variant="outline" size="sm" className="w-full" asChild>
-                <Link href="/revision">Review All</Link>
+                <Link href="/dashboard/revision">Review All</Link>
               </Button>
             </CardContent>
           </Card>

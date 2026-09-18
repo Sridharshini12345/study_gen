@@ -727,7 +727,7 @@ export const demoRecommendations = [
     reason:
       'You struggled with polymorphism in your last quiz (48%). Review the core concept before moving to advanced OOP.',
     action: 'Review Now',
-    href: '/lesson/polymorphism',
+    href: '/dashboard/lesson/polymorphism',
     priority: 'high' as const,
     icon: 'AlertCircle',
   },
@@ -736,7 +736,7 @@ export const demoRecommendations = [
     reason:
       'Subnetting questions were challenging. Practice with flashcards and visual examples.',
     action: 'Practice',
-    href: '/flashcards',
+    href: '/dashboard/flashcards',
     priority: 'medium' as const,
     icon: 'Layers',
   },
@@ -745,7 +745,7 @@ export const demoRecommendations = [
     reason:
       'You started learning about AWS EC2 but are only 20% through. Pick up where you left off.',
     action: 'Continue',
-    href: '/lesson/aws-ec2',
+    href: '/dashboard/lesson/aws-ec2',
     priority: 'low' as const,
     icon: 'PlayCircle',
   },

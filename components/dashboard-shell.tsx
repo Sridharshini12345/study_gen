@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, Brain, BookOpen, FileText, MessageSquare,
   Video, Layers, ClipboardCheck, RefreshCw, Target, BarChart3,
-  Settings, User, LogOut, Menu, X, Bell, ChevronLeft, Sparkles,
+  Settings, User, LogOut, Menu, X, Bell, ChevronLeft, Sparkles, Users,
 } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -21,16 +21,17 @@ import { demoNotifications } from '@/lib/demo-data';
 
 const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/learn', label: 'Learn Anything', icon: Brain },
-  { href: '/my-learning', label: 'My Learning', icon: BookOpen },
-  { href: '/documents', label: 'Documents', icon: FileText },
-  { href: '/tutor', label: 'AI Tutor', icon: MessageSquare },
-  { href: '/videos', label: 'Videos', icon: Video },
-  { href: '/flashcards', label: 'Flashcards', icon: Layers },
-  { href: '/tests', label: 'Tests', icon: ClipboardCheck },
-  { href: '/revision', label: 'Revision', icon: RefreshCw },
-  { href: '/career', label: 'Career Roadmap', icon: Target },
-  { href: '/analytics', label: 'Progress', icon: BarChart3 },
+  { href: '/dashboard/learn', label: 'Learn Anything', icon: Brain },
+  { href: '/dashboard/my-learning', label: 'My Learning', icon: BookOpen },
+  { href: '/dashboard/documents', label: 'Documents', icon: FileText },
+  { href: '/dashboard/tutor', label: 'AI Tutor', icon: MessageSquare },
+  { href: '/dashboard/videos', label: 'Videos', icon: Video },
+  { href: '/dashboard/flashcards', label: 'Flashcards', icon: Layers },
+  { href: '/dashboard/tests', label: 'Tests', icon: ClipboardCheck },
+  { href: '/dashboard/revision', label: 'Revision', icon: RefreshCw },
+  { href: '/dashboard/career', label: 'Career Roadmap', icon: Target },
+  { href: '/dashboard/analytics', label: 'Progress', icon: BarChart3 },
+  { href: '/dashboard/community', label: 'Community', icon: Users },
 ];
 
 export function DashboardShell({ children }: { children: React.ReactNode }) {
@@ -78,11 +79,11 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
 
       <div className="border-t p-3 space-y-1">
         <Link
-          href="/settings"
+          href="/dashboard/settings"
           onClick={() => setMobileOpen(false)}
           className={cn(
             'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all',
-            pathname === '/settings'
+            pathname === '/dashboard/settings'
               ? 'bg-primary text-primary-foreground'
               : 'text-muted-foreground hover:bg-accent hover:text-foreground'
           )}
@@ -91,11 +92,11 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
           Settings
         </Link>
         <Link
-          href="/profile"
+          href="/dashboard/profile"
           onClick={() => setMobileOpen(false)}
           className={cn(
             'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all',
-            pathname === '/profile'
+            pathname === '/dashboard/profile'
               ? 'bg-primary text-primary-foreground'
               : 'text-muted-foreground hover:bg-accent hover:text-foreground'
           )}
@@ -156,7 +157,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
               )}
             </Button>
             <ThemeToggle />
-            <Link href="/profile">
+            <Link href="/dashboard/profile">
               <Avatar className="h-9 w-9 cursor-pointer border-2 border-primary/20">
                 <AvatarFallback className="bg-primary/10 text-primary text-sm font-semibold">
                   {profile?.name?.[0]?.toUpperCase() || 'U'}

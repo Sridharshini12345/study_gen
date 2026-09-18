@@ -55,7 +55,7 @@ export default function MyLearningClient() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {filtered.map((lesson) => (
-              <Link key={lesson.id} href={`/lesson/${lesson.id}`}>
+              <Link key={lesson.id} href={`/dashboard/lesson/${lesson.id}`}>
                 <Card className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 duration-300">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3 mb-3">
@@ -89,7 +89,7 @@ export default function MyLearningClient() {
           ) : (
             <div className="grid gap-4 sm:grid-cols-2">
               {inProgress.map((lesson) => (
-                <Link key={lesson.id} href={`/lesson/${lesson.id}`}>
+                <Link key={lesson.id} href={`/dashboard/lesson/${lesson.id}`}>
                   <Card className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 duration-300">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3 mb-3">
@@ -120,7 +120,7 @@ export default function MyLearningClient() {
           ) : (
             <div className="grid gap-4 sm:grid-cols-2">
               {completed.map((lesson) => (
-                <Link key={lesson.id} href={`/lesson/${lesson.id}`}>
+                <Link key={lesson.id} href={`/dashboard/lesson/${lesson.id}`}>
                   <Card className="group cursor-pointer transition-all hover:shadow-lg duration-300">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3 mb-3">
@@ -150,7 +150,7 @@ function EmptyState({ message }: { message: string }) {
     <div className="flex flex-col items-center justify-center py-16 text-center">
       <BookOpen className="h-12 w-12 text-muted-foreground/30 mb-3" />
       <p className="text-sm text-muted-foreground">{message}</p>
-      <Button asChild className="mt-4" size="sm"><Link href="/learn">Learn Something New</Link></Button>
+      <Button asChild className="mt-4" size="sm"><Link href="/dashboard/learn">Learn Something New</Link></Button>
     </div>
   );
 }
